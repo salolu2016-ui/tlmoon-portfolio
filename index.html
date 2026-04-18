@@ -1,172 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TL Moon | Technology Solutions Consulting</title>
 
-<title>TL Moon | Technology Solutions Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05070a;
+            --card-bg: #0d1117;
+            --accent-purple: #bf5af2;
+            --accent-blue: #0a84ff;
+            --text-main: #f5f5f7;
+            --text-dim: #a1a1a6;
+        }
 
-<style>
-:root {
-    --bg-color: #05070a;
-    --card-bg: #0d1117;
-    --accent-purple: #bf5af2;
-    --accent-blue: #0a84ff;
-    --text-main: #f5f5f7;
-    --text-dim: #a1a1a6;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-}
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5, 7, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
 
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 10%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(5,7,10,0.8);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-}
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .nav-links a {
+            color: white;
+            margin-left: 2rem;
+            text-decoration: none;
+        }
 
-.nav-links a {
-    color: white;
-    margin-left: 2rem;
-    text-decoration: none;
-}
+        /* HERO */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 120px;
+        }
 
-/* HERO PRO */
-header {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 10%;
-    position: relative;
-    overflow: hidden;
-}
+        header img {
+            width: 160px;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(191, 90, 242, 0.4);
+        }
 
-.hero-content {
-    max-width: 800px;
-    z-index: 2;
-}
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+        }
 
-.hero-logo {
-    width: 180px;
-    margin-bottom: 2rem;
-    filter: drop-shadow(0 0 25px rgba(191,90,242,0.4));
-}
+        .hero-title span {
+            background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
+        .hero-subtitle {
+            margin-top: 1rem;
+            color: var(--text-dim);
+        }
 
-.gradient-text {
-    background: linear-gradient(90deg, #bf5af2, #0a84ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .btn {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
+            color: white;
+            text-decoration: none;
+        }
 
-.hero-subtitle {
-    color: var(--text-dim);
-    margin-bottom: 2rem;
-}
+        section {
+            padding: 6rem 10%;
+        }
 
-.btn {
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    color: white;
-}
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-/* SECTIONS */
-section {
-    padding: 6rem 10%;
-}
+        .services-grid, .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
 
-h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-}
+        .service-card, .project-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+        }
 
-/* ABOUT */
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-/* SERVICES */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 20px;
-}
-
-/* PORTFOLIO */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.project-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 20px;
-}
-
-/* CONTACT */
-.contact-info {
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    padding: 3rem;
-    color: var(--text-dim);
-}
-
-/* RESPONSIVE */
-@media (max-width:768px){
-    .about-container,
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+        }
+    </style>
 </head>
 
 <body>
@@ -174,43 +134,27 @@ footer {
 <nav>
     <div class="logo">TL MOON</div>
     <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
+        <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
-<header>
-    <div class="hero-content">
+<header id="home">
+    <img src="logo.jpg" alt="TL Moon Logo">
 
-        <img src="logo.jpg" class="hero-logo">
+    <h1 class="hero-title">
+        Technology Solutions <br>
+        <span>with Strategy & Precision</span>
+    </h1>
 
-        <h1 class="hero-title">
-            Technology Solutions <br>
-            <span class="gradient-text">with Strategy & Precision</span>
-        </h1>
+    <p class="hero-subtitle">
+        I help businesses turn complex technology into simple, practical solutions.
+    </p>
 
-        <p class="hero-subtitle">
-            I help businesses turn complex technology into simple, practical solutions.
-        </p>
-
-        <a href="mailto:salolu2016@gmail.com" class="btn">Start your project</a>
-
-    </div>
+    <a href="mailto:salolu2016@gmail.com" class="btn">Start your project</a>
 </header>
-
-<section id="about">
-    <h2>About</h2>
-    <div class="about-container">
-        <div>
-            <h3>Diana Luna</h3>
-            <p>Technology Solutions Consultant focused on bridging business and tech.</p>
-        </div>
-        <div></div>
-    </div>
-</section>
 
 <section id="services">
     <h2>Services</h2>
@@ -231,10 +175,10 @@ footer {
 
 <section id="contact">
     <h2>Contact</h2>
-    <div class="contact-info">
-        <p>Quito, Ecuador</p>
-        <p>salolu2016@gmail.com</p>
-    </div>
+    <p style="text-align:center;">
+        salolu2016@gmail.com<br>
+        +593 995651534
+    </p>
 </section>
 
 <footer>
