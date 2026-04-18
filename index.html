@@ -200,31 +200,82 @@
         </div>
     </section>
 
+  <section id="downloads" style="background: rgba(10, 132, 255, 0.03); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span class="project-tag">Documentation</span>
+            <h2>Professional Resources</h2>
+            <p style="color: var(--text-dim); margin-top: 1rem;">Access my full profile and selected works</p>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+            
+            <div class="download-group">
+                <h4 style="margin-bottom: 1.5rem; color: var(--accent-purple); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Portfolios</h4>
+                <div style="display: flex; gap: 15px;">
+                    <a href="Portfolio_EN.pdf" download class="btn-download">
+                        <span>EN</span>
+                    </a>
+                    <a href="Portfolio_ES.pdf" download class="btn-download">
+                        <span>ES</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="download-group">
+                <h4 style="margin-bottom: 1.5rem; color: var(--accent-blue); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Curriculum Vitae</h4>
+                <div style="display: flex; gap: 15px;">
+                    <a href="CV_Diana_Luna_EN.pdf" download class="btn-download btn-blue">
+                        <span>EN</span>
+                    </a>
+                    <a href="CV_Diana_Luna_ES.pdf" download class="btn-download btn-blue">
+                        <span>ES</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <style>
+        .download-group {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+        }
+
         .btn-download {
-            background: rgba(255, 255, 255, 0.05);
+            flex: 1;
+            background: rgba(191, 90, 242, 0.1);
             border: 1px solid rgba(191, 90, 242, 0.3);
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 15px;
+            padding: 0.8rem;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .btn-download:hover {
-            background: rgba(191, 90, 242, 0.1);
-            border-color: var(--accent-purple);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: var(--accent-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(191, 90, 242, 0.3);
         }
 
-        .btn-download .icon {
-            font-size: 1.2rem;
+        .btn-download.btn-blue {
+            background: rgba(10, 132, 255, 0.1);
+            border-color: rgba(10, 132, 255, 0.3);
+        }
+
+        .btn-download.btn-blue:hover {
+            background: var(--accent-blue);
+            box-shadow: 0 5px 15px rgba(10, 132, 255, 0.3);
         }
     </style>
     
