@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TL Moon | Technology Solutions Consulting</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -24,18 +25,31 @@ body {
     color: var(--text);
 }
 
+/* NAV */
 nav {
     display:flex;
     justify-content:space-between;
+    align-items:center;
     padding:20px 10%;
     position:fixed;
     width:100%;
     background:rgba(0,0,0,0.6);
     backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
-nav img { height:40px; }
+nav img {
+    height:40px;
+}
 
+.nav-links a {
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-size:0.9rem;
+}
+
+/* HERO */
 header {
     height:100vh;
     display:flex;
@@ -49,16 +63,16 @@ header {
 }
 
 header img {
-    width:140px;
+    width:120px;
     margin-bottom:20px;
 }
 
-h1 {
+.hero-title {
     font-size:3rem;
     margin-bottom:10px;
 }
 
-.subtitle {
+.hero-subtitle {
     color:var(--dim);
     max-width:600px;
     margin-bottom:30px;
@@ -72,32 +86,79 @@ h1 {
     text-decoration:none;
 }
 
+/* SECTIONS */
 section {
-    padding:80px 10%;
+    padding:100px 10%;
 }
 
-.cards {
+h2 {
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+/* ABOUT */
+.about-container {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.about-text p {
+    color:var(--dim);
+    margin-bottom:15px;
+}
+
+/* SERVICES */
+.services-grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
-.card {
+.service-card {
     background:var(--card);
     padding:30px;
     border-radius:20px;
     transition:0.3s;
 }
 
-.card:hover {
+.service-card:hover {
     transform:translateY(-5px);
     border:1px solid var(--purple);
 }
 
+/* PORTFOLIO */
+.portfolio-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.project-card {
+    background:var(--card);
+    padding:30px;
+    border-radius:20px;
+}
+
+/* CONTACT */
+.contact-info {
+    text-align:center;
+}
+
+/* FOOTER */
 footer {
     text-align:center;
     padding:40px;
     color:var(--dim);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .about-container,
+    .portfolio-grid {
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
@@ -106,52 +167,79 @@ footer {
 
 <nav>
     <img src="logo.jpg" alt="TL Moon">
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
 <header>
     <img src="logo.jpg" alt="TL Moon">
-    <h1>Technology Solutions<br><span style="color:#bf5af2;">with Strategy & Precision</span></h1>
-    <p class="subtitle">Helping businesses simplify technology and build effective digital solutions.</p>
-    <a href="mailto:salolu2016@gmail.com" class="btn">Book a Consultation</a>
+    <h1 class="hero-title">
+        Technology Solutions <br>
+        <span style="color:#bf5af2;">with Strategy & Precision</span>
+    </h1>
+    <p class="hero-subtitle">
+        I help businesses turn complex technology into simple, practical solutions that actually work.
+    </p>
+    <a href="mailto:salolu2016@gmail.com" class="btn">Start your project</a>
 </header>
 
-<section>
+<section id="about">
+    <h2>About</h2>
+    <div class="about-container">
+        <div class="about-text">
+            <p>TL Moon was founded by Diana Luna, a Technology Solutions Consultant focused on bridging business needs with practical digital solutions.</p>
+            <p>Experience includes software requirements, QA testing, web development, and IT support.</p>
+            <p><strong>Simple. Practical. Effective.</strong></p>
+        </div>
+        <div style="text-align:center;">
+            <img src="logo.jpg" style="width:200px; opacity:0.7;">
+        </div>
+    </div>
+</section>
+
+<section id="services">
     <h2>Services</h2>
-    <div class="cards">
-        <div class="card">
+    <div class="services-grid">
+        <div class="service-card">
             <h3>Strategy</h3>
-            <p>Requirements analysis, UX strategy and tech planning.</p>
+            <p>Requirements analysis, UX strategy and planning.</p>
         </div>
-        <div class="card">
+        <div class="service-card">
             <h3>Web Solutions</h3>
-            <p>Modern websites, structure and deployment.</p>
+            <p>Modern websites and deployment.</p>
         </div>
-        <div class="card">
+        <div class="service-card">
             <h3>QA & Support</h3>
             <p>Testing, optimization and IT support.</p>
         </div>
     </div>
 </section>
 
-<section>
+<section id="portfolio">
     <h2>Projects</h2>
-    <div class="cards">
-        <div class="card">
+    <div class="portfolio-grid">
+        <div class="project-card">
             <h3>SAS Remodeling</h3>
             <p>Full digital presence for a service business.</p>
         </div>
-        <div class="card">
+        <div class="project-card">
             <h3>Seeds of Love</h3>
-            <p>Structured platform for non-profit organization.</p>
+            <p>Structured platform for a non-profit.</p>
         </div>
     </div>
 </section>
 
-<section>
+<section id="contact">
     <h2>Contact</h2>
-    <p style="text-align:center;">Quito, Ecuador<br>
-    salolu2016@gmail.com<br>
-    +593 995651534</p>
+    <div class="contact-info">
+        <p>Quito, Ecuador</p>
+        <p>salolu2016@gmail.com</p>
+        <p>+593 995651534</p>
+    </div>
 </section>
 
 <footer>
