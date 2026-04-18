@@ -16,188 +16,93 @@
             --glow: rgba(191, 90, 242, 0.4);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- NAVEGACIÓN ESTILO IMAGEN --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 8%;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-nav {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            margin-left: 2.5rem;
-            font-size: 0.95rem;
-            transition: opacity 0.3s;
-        }
-
+        /* --- NAVEGACIÓN --- */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 8%; position: absolute; width: 100%; top: 0; z-index: 1000; }
+        .logo-nav { font-weight: 700; font-size: 1.5rem; color: var(--accent-blue); text-decoration: none; letter-spacing: 0.5px; }
+        .nav-links a { color: var(--text-main); text-decoration: none; margin-left: 2.5rem; font-size: 0.95rem; transition: opacity 0.3s; }
         .nav-links a:hover { opacity: 0.7; }
 
-        /* --- HERO SECTION --- */
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10%;
-            background: radial-gradient(circle at 50% 40%, rgba(191, 90, 242, 0.12) 0%, transparent 60%);
-        }
+        /* --- HERO --- */
+        header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; background: radial-gradient(circle at 50% 40%, rgba(191, 90, 242, 0.12) 0%, transparent 60%); }
+        .hero-logo-container { width: 180px; height: 180px; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: center; }
+        .hero-logo-container img { width: 100%; height: 100%; object-fit: contain; border-radius: 24px; box-shadow: 0 0 50px var(--glow); }
+        .hero-title { font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -1px; color: white; line-height: 1.1; }
+        .hero-title span { display: block; background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); color: var(--text-dim); max-width: 700px; margin-bottom: 3.5rem; font-weight: 300; }
+        .btn-hero { background: linear-gradient(90deg, #bf5af2 0%, #0a84ff 100%); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; }
+        .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(10, 132, 255, 0.4); }
 
-        .hero-logo-container {
-            width: 180px;
-            height: 180px;
-            margin-bottom: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 24px;
-            box-shadow: 0 0 50px var(--glow); /* El brillo de la imagen */
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
-            color: white;
-            line-height: 1.1;
-        }
-
-        .hero-title span {
-            display: block;
-            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            color: var(--text-dim);
-            max-width: 700px;
-            margin-bottom: 3.5rem;
-            font-weight: 300;
-        }
-
-        .btn-hero {
-            background: linear-gradient(90deg, #bf5af2 0%, #0a84ff 100%);
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn-hero:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(10, 132, 255, 0.4);
-        }
-
-        /* --- SECCIONES GENERALES --- */
+        /* --- ABOUT SECTION MEJORADA --- */
         section { padding: 8rem 10%; }
-        h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
-
-        /* About Section */
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .about-text h3 { color: var(--accent-purple); margin-bottom: 1rem; }
+        .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .project-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-purple); margin-bottom: 1rem; display: block; font-weight: 600; }
+        .about-text h3 { font-size: 2.5rem; margin-bottom: 1.5rem; color: white; }
         .about-text p { margin-bottom: 1.5rem; color: var(--text-dim); font-size: 1.1rem; }
 
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .about-visual { perspective: 1000px; }
+        .visual-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(191, 90, 242, 0.2);
+            height: 350px;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        .service-card {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: border 0.3s;
+        .visual-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            border-color: var(--accent-purple);
+            box-shadow: 0 30px 60px rgba(191, 90, 242, 0.15);
         }
-        .service-card:hover { border-color: var(--accent-purple); }
+        .visual-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(191, 90, 242, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .visual-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 15px var(--accent-purple));
+        }
+        .visual-card span {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* --- RESTO DE SECCIONES --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--card-bg); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); }
         .service-card h3 { margin-bottom: 1rem; color: var(--accent-blue); }
         .service-card ul { list-style: none; color: var(--text-dim); }
         .service-card ul li::before { content: "•"; color: var(--accent-purple); display: inline-block; width: 1em; margin-left: -1em; }
-
-        /* Portfolio */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .project-card {
-            background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        .project-tag {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-purple);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        /* Contact */
+        
         .contact-info { text-align: center; max-width: 600px; margin: 0 auto; }
         .contact-info a { color: var(--accent-blue); text-decoration: none; font-size: 1.2rem; }
+        footer { padding: 4rem 10%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-dim); }
 
-        footer {
-            padding: 4rem 10%;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .about-container, .portfolio-grid { grid-template-columns: 1fr; }
+            .about-container { grid-template-columns: 1fr; }
             section { padding: 4rem 5%; }
         }
     </style>
@@ -218,13 +123,11 @@
         <div class="hero-logo-container">
             <img src="logo.jpg" alt="TL Moon Logo">
         </div>
-        
         <h1 class="hero-title">
             Technology Solutions 
             <span>with Strategy & Precision</span>
         </h1>
         <p class="hero-subtitle">I help businesses turn complex technology into simple, practical solutions.</p>
-        
         <a href="#contact" class="btn-hero">Start your project</a>
     </header>
 
@@ -235,79 +138,17 @@
                 <h3>Diana Luna</h3>
                 <p>TL Moon was founded by Diana Luna, a Technology Solutions Consultant dedicated to bridging the gap between complex business needs and efficient digital tools.</p>
                 <p>With expertise spanning software requirements, quality assurance, web development, and IT support, Diana provides a holistic view of your technology landscape.</p>
-                <p><strong>Personalized. Practical. Human.</strong></p>
+                <p style="color: white; font-weight: 700;">Personalized. Practical. Human.</p>
             </div>
+            
             <div class="about-visual">
-                <div style="background: var(--card-bg); height: 300px; border-radius: 20px; border: 1px dashed var(--accent-purple); display: flex; align-items: center; justify-content: center; opacity: 0.5;">
-                    <span style="font-size: 0.8rem; color: var(--text-dim);">Strategic Technology Planning</span>
+                <div class="visual-card">
+                    <div class="visual-icon">✧</div>
+                    <span>Strategic<br>Technology<br>Planning</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" style="background-color: #080a0e;">
-        <h2>Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Assessment & Strategy</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.9rem;">Building the blueprint for your digital success.</p>
-                <ul>
-                    <li>Software requirements analysis</li>
-                    <li>UI/UX Design Strategy</li>
-                    <li>Technology roadmapping</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Web & App Solutions</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.9rem;">Modern, responsive, and functional development.</p>
-                <ul>
-                    <li>Custom Web development</li>
-                    <li>Website administration</li>
-                    <li>Domain & Hosting setup</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Quality & Support</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.9rem;">Reliable maintenance and rigorous standards.</p>
-                <ul>
-                    <li>QA Testing</li>
-                    <li>IT Support & Optimization</li>
-                    <li>PC Maintenance</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <h2>Selected Projects</h2>
-        <div class="portfolio-grid">
-            <div class="project-card">
-                <span class="project-tag">Full Development • USA</span>
-                <h3>SAS Home Remodeling Services</h3>
-                <p>Transforming a traditional service business into a digital-first brand through comprehensive requirements analysis and web presence.</p>
-            </div>
-            <div class="project-card">
-                <span class="project-tag">Non-Profit • USA</span>
-                <h3>Seeds of Love Foundation</h3>
-                <p>Structuring complex organizational goals into a clear, navigable, and impactful digital platform.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Let's Connect</h2>
-        <div class="contact-info">
-            <p>Based in <strong>Quito, Ecuador</strong>. Serving clients locally and remotely across <strong>LATAM and the USA</strong>.</p>
-            <p style="margin-top: 2rem;">
-                <a href="mailto:salolu2016@gmail.com">salolu2016@gmail.com</a><br>
-                <a href="tel:+593995651534">+593 995651534</a>
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 TL Moon - Technology Solutions Consulting. All rights reserved.</p>
-    </footer>
-
-</body>
+    </body>
 </html>
