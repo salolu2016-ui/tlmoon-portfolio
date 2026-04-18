@@ -13,14 +13,9 @@
             --accent-blue: #0a84ff;
             --text-main: #f5f5f7;
             --text-dim: #a1a1a6;
-            --glow: rgba(191, 90, 242, 0.4);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -30,21 +25,20 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVEGACIÓN ESTILO IMAGEN --- */
+        /* --- NAVEGACIÓN --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
-            position: absolute; /* Cambiado a absoluto para que flote sobre el hero */
+            padding: 1.5rem 8%;
+            position: absolute;
             width: 100%;
-            top: 0;
             z-index: 1000;
         }
 
-        .logo-nav {
+        .logo-text {
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent-blue);
             text-decoration: none;
             letter-spacing: 0.5px;
@@ -53,46 +47,56 @@
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
-            margin-left: 2.5rem;
-            font-size: 0.95rem;
-            font-weight: 400;
+            margin-left: 2rem;
+            font-size: 0.9rem;
             transition: opacity 0.3s;
         }
 
-        .nav-links a:hover {
-            opacity: 0.7;
-        }
+        .nav-links a:hover { opacity: 0.7; }
 
-        /* --- HERO SECTION REESTRUCTURADO --- */
-        header {
-            min-height: 100vh;
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 10%;
-            background: radial-gradient(circle at 50% 40%, rgba(191, 90, 242, 0.12) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 40%, rgba(191, 90, 242, 0.15) 0%, transparent 60%);
         }
 
-        .hero-logo-img {
-            width: 180px; /* Ajusta según el tamaño de tu archivo */
-            height: auto;
-            margin-bottom: 2rem;
-            filter: drop-shadow(0 0 25px var(--glow));
+        /* Contenedor del logo con el brillo púrpura de la imagen */
+        .hero-logo-container {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 24px;
+            /* Brillo suave alrededor de la imagen */
+            box-shadow: 0 0 50px rgba(191, 90, 242, 0.5);
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
             color: white;
         }
 
         .hero-title span {
             display: block;
-            background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
+            background: linear-gradient(90deg, #bf5af2, #0a84ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -100,15 +104,15 @@
         .hero-subtitle {
             font-size: clamp(1rem, 2vw, 1.2rem);
             color: var(--text-dim);
-            max-width: 700px;
+            max-width: 650px;
             margin-bottom: 3rem;
             font-weight: 300;
         }
 
-        .btn-hero {
-            background: linear-gradient(90deg, #bf5af2 0%, #0a84ff 100%);
+        .btn-main {
+            background: linear-gradient(90deg, #bf5af2, #0a84ff);
             color: white;
-            padding: 1.2rem 3rem;
+            padding: 1.1rem 2.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -116,32 +120,17 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .btn-hero:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(10, 132, 255, 0.4);
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(10, 132, 255, 0.3);
         }
 
-        /* --- RESTO DE SECCIONES (Mantenidas según tu código original) --- */
+        /* --- SECCIONES SIGUIENTES --- */
         section { padding: 8rem 10%; }
         h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
-        .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .about-text h3 { color: var(--accent-purple); margin-bottom: 1rem; }
-        .about-text p { margin-bottom: 1.5rem; color: var(--text-dim); font-size: 1.1rem; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .service-card { background: var(--card-bg); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); }
-        .service-card h3 { margin-bottom: 1rem; color: var(--accent-blue); }
-        .service-card ul { list-style: none; color: var(--text-dim); }
-        .service-card ul li::before { content: "•"; color: var(--accent-purple); display: inline-block; width: 1em; margin-left: -1em; }
-        .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .project-card { background: linear-gradient(180deg, #161b22 0%, #0d1117 100%); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.03); }
-        .project-tag { font-size: 0.8rem; text-transform: uppercase; color: var(--accent-purple); margin-bottom: 1.5rem; display: block; }
-        .contact-info { text-align: center; max-width: 600px; margin: 0 auto; }
-        .contact-info a { color: var(--accent-blue); text-decoration: none; }
-        footer { padding: 4rem 10%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-dim); }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .about-container, .portfolio-grid { grid-template-columns: 1fr; }
             section { padding: 4rem 5%; }
         }
     </style>
@@ -149,7 +138,7 @@
 <body>
 
     <nav>
-        <a href="#" class="logo-nav">TL MOON</a>
+        <div class="logo-text">TL MOON</div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
@@ -158,93 +147,20 @@
         </div>
     </nav>
 
-    <header id="home">
-        <img src="hero.jpg" alt="TL Moon Logo" class="hero-logo-img">
+    <header class="hero" id="home">
+        <div class="hero-logo-container">
+            <img src="logo.jpg" alt="TL Moon Logo">
+        </div>
         
         <h1 class="hero-title">
-            Technology Solutions 
+            Technology Solutions
             <span>with Strategy & Precision</span>
         </h1>
+        
         <p class="hero-subtitle">I help businesses turn complex technology into simple, practical solutions.</p>
         
-        <a href="#contact" class="btn-hero">Start your project</a>
+        <a href="#contact" class="btn-main">Start your project</a>
     </header>
 
-    <section id="about">
-        <div class="about-container">
-            <div class="about-text">
-                <span class="project-tag">Our Founder</span>
-                <h3>Diana Luna</h3>
-                <p>TL Moon was founded by Diana Luna, a Technology Solutions Consultant dedicated to bridging the gap between complex business needs and efficient digital tools.</p>
-                <p><strong>Personalized. Practical. Human.</strong></p>
-            </div>
-            <div class="about-visual">
-                <div style="background: var(--card-bg); height: 300px; border-radius: 20px; border: 1px dashed var(--accent-purple); display: flex; align-items: center; justify-content: center; opacity: 0.5;">
-                    <span style="font-size: 0.8rem; color: var(--text-dim);">Strategic Technology Planning</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" style="background-color: #080a0e;">
-        <h2>Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Assessment & Strategy</h3>
-                <ul>
-                    <li>Software requirements analysis</li>
-                    <li>UI/UX Design Strategy</li>
-                    <li>Technology roadmapping</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Web & App Solutions</h3>
-                <ul>
-                    <li>Custom Web development</li>
-                    <li>Website administration</li>
-                    <li>Domain & Hosting setup</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Quality & Support</h3>
-                <ul>
-                    <li>QA Testing</li>
-                    <li>IT Support & Optimization</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <h2>Selected Projects</h2>
-        <div class="portfolio-grid">
-            <div class="project-card">
-                <span class="project-tag">Full Development • USA</span>
-                <h3>SAS Home Remodeling</h3>
-                <p>Transforming a traditional service business into a digital-first brand.</p>
-            </div>
-            <div class="project-card">
-                <span class="project-tag">Non-Profit • USA</span>
-                <h3>Seeds of Love Foundation</h3>
-                <p>Structuring complex organizational goals into an impactful digital platform.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Let's Connect</h2>
-        <div class="contact-info">
-            <p>Based in <strong>Quito, Ecuador</strong>.</p>
-            <p style="margin-top: 2rem;">
-                <a href="mailto:salolu2016@gmail.com">salolu2016@gmail.com</a><br>
-                <a href="tel:+593995651534">+593 995651534</a>
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 TL Moon - Technology Solutions Consulting. All rights reserved.</p>
-    </footer>
-
-</body>
+    </body>
 </html>
