@@ -42,26 +42,62 @@
         .about-text h3 { font-size: 2.5rem; margin-bottom: 1.5rem; color: white; }
         .about-text p { margin-bottom: 1.5rem; color: var(--text-dim); font-size: 1.1rem; }
 
-        .about-visual { perspective: 1000px; }
+               .about-visual {
+            perspective: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .about-tech-image {
+            width: 80%;
+            max-width: 430px;
+            border-radius: 28px;
+            object-fit: cover;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.45), 0 0 35px rgba(191, 90, 242, 0.18);
+        }
+        
         .visual-card {
+            width: 80%;
+            max-width: 430px;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(191, 90, 242, 0.2);
-            height: 350px;
-            border-radius: 40px;
+            min-height: 150px;
+            border-radius: 28px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            gap: 1.2rem;
+            padding: 1.6rem;
+            transition: all 0.4s ease;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        .visual-card:hover { transform: translateY(-10px) rotateY(5deg); border-color: var(--accent-purple); box-shadow: 0 30px 60px rgba(191, 90, 242, 0.15); }
-        .visual-icon { font-size: 4rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 15px var(--accent-purple)); }
-        .visual-card span { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: white; font-weight: 700; text-align: center; line-height: 1.4; }
+        
+        .visual-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 30px 60px rgba(191, 90, 242, 0.15);
+        }
+        
+        .visual-icon {
+            font-size: 3rem;
+            line-height: 1;
+            filter: drop-shadow(0 0 15px var(--accent-purple));
+        }
+        
+        .visual-card h4 {
+            color: white;
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .visual-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
 
         /* --- SERVICES --- */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
@@ -123,12 +159,19 @@
                 <p>With expertise spanning software requirements, quality assurance, web development, and IT support, Diana provides a holistic view of your technology landscape.</p>
                 <p style="color: white; font-weight: 700;">Personalized. Practical. Human.</p>
             </div>
-            <div class="about-visual">
-                <div class="visual-card">
-                    <div class="visual-icon">✧</div>
-                    <span>Strategic<br>Technology<br>Planning</span>
+        <div class="about-visual">
+            <img src="chica_test_program.png"
+                 alt="Testing and programming illustration"
+                 class="about-tech-image">
+        
+            <div class="visual-card">
+                <div class="visual-icon">✧</div>
+                <div>
+                    <h4>Strategic Technology Planning</h4>
+                    <p>Practical technology solutions aligned with real business goals.</p>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
