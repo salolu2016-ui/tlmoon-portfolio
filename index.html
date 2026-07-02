@@ -106,7 +106,35 @@
         .service-card h3 { margin-bottom: 1rem; color: var(--accent-blue); }
         .service-card ul { list-style: none; color: var(--text-dim); }
         .service-card ul li::before { content: "•"; color: var(--accent-purple); display: inline-block; width: 1em; margin-left: -1em; }
+        .service-card{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:2rem;
+            }
 
+        .service-content{
+            flex:1;
+            text-align:left;
+            }
+        
+        .service-image{
+            width:170px;
+            flex-shrink:0;
+            display:flex;
+            justify-content:center;
+            }
+        
+        .service-image img{
+            width:160px;
+            transition:.35s;
+            }
+        
+        .service-image img:hover{
+            transform:scale(1.08) rotate(-3deg);
+            }
+
+        
         /* --- PORTFOLIO --- */
         .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .project-card { background: linear-gradient(180deg, #161b22 0%, #0d1117 100%); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.03); }
@@ -117,11 +145,35 @@
         
         footer { padding: 4rem 10%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-dim); font-size: 0.9rem; margin-top: 4rem; }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .about-container, .portfolio-grid { grid-template-columns: 1fr; }
-            section { padding: 4rem 5%; }
-        }
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .about-container,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 4rem 5%;
+    }
+
+    .service-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-content {
+    text-align: center;
+}
+
+    .service-image img {
+        width: 180px;
+    }
+
+}
     </style>
 </head>
 <body>
@@ -178,29 +230,65 @@
     <section id="services" style="background-color: #080a0e;">
         <h2 style="text-align: center; margin-bottom: 3rem;">Services</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <h3>Assessment & Strategy</h3>
-                <ul>
-                    <li>Software requirements analysis</li>
-                    <li>UI/UX Design Strategy</li>
-                    <li>Technology roadmapping</li>
-                </ul>
+           <div class="service-card">
+
+                <div class="service-content">
+            
+                    <h3>Assessment & Strategy</h3>
+            
+                    <ul>
+                        <li>Software requirements analysis</li>
+                        <li>UI/UX Design Strategy</li>
+                        <li>Technology roadmapping</li>
+                    </ul>
+            
+                </div>
+            
+                <div class="service-image">
+                    <img src="Sticker3_Assessment_Strategy.png"
+                         alt="Assessment & Strategy">
+                </div>
+            
             </div>
-            <div class="service-card">
+           <div class="service-card">
+
+            <div class="service-content">
+        
                 <h3>Web & App Solutions</h3>
+        
                 <ul>
                     <li>Custom Web development</li>
                     <li>Website administration</li>
                     <li>Domain & Hosting setup</li>
                 </ul>
+        
             </div>
-            <div class="service-card">
-                <h3>Quality & Support</h3>
-                <ul>
-                    <li>QA Testing</li>
-                    <li>IT Support & Optimization</li>
-                </ul>
+        
+            <div class="service-image">
+                <img src="Sticker2_Web_App_Solutions.png"
+                     alt="Web & App Solutions">
             </div>
+        
+        </div>
+           <div class="service-card">
+
+    <div class="service-content">
+
+        <h3>Quality & Support</h3>
+
+        <ul>
+            <li>QA Testing</li>
+            <li>IT Support & Optimization</li>
+        </ul>
+
+    </div>
+
+    <div class="service-image">
+        <img src="Sticker1_Quality_Support.jpeg"
+             alt="Quality & Support">
+    </div>
+
+</div>
         </div>
     </section>
 
